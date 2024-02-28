@@ -1,0 +1,68 @@
+body {
+  height: 100vh;
+  background: #0f202789;
+  background: linear-gradient(120deg, #2c5364, #203a43, #0f2027);
+}
+
+.hover_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hover_wrap figure {
+  width: 400px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #874ba2, #c43a30);
+}
+.hover_wrap figure::before {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background: white;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.hover_wrap figure::after {
+  content: "";
+  width: 1px;
+  height: 60px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.hover_wrap figure img {
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.hover_wrap figure.hover3:hover img {
+  opacity: 0.6;
+}
+.hover_wrap figure.hover3:hover::before {
+  left: 50%;
+  opacity: 1;
+}
+.hover_wrap figure.hover3:hover::after {
+  top: 50%;
+  opacity: 1;
+}
+
+.hover_wrap figure.hover4:hover img {
+  opacity: 0.6;
+}

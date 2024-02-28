@@ -1,0 +1,80 @@
+body {
+  height: 100vh;
+  background: #0f202789;
+  background: linear-gradient(120deg, #2c5364, #203a43, #0f2027);
+}
+
+.hover_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hover_wrap figure {
+  position: relative;
+  width: 400px;
+  margin: 10px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.hover_wrap figure img {
+  transition: all 0.3s ease;
+  display: block;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.hover_wrap figure:hover img {
+  opacity: 0.3;
+}
+
+.hover_wrap figcaption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hover_wrap figcaption::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.hover_wrap figcaption strong {
+  color: #fff;
+  z-index: 2;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+@media (max-width: 800px) {
+  .hover_wrap {
+    flex-direction: column;
+  }
+}
+
+.hover_wrap .hover5 figcaption {
+  transform: translateX(80%);
+  transition: all 0.3s ease;
+}
+
+.hover_wrap .hover5:hover figcaption {
+  transform: translateX(0%);
+}
