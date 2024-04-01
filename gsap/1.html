@@ -86,38 +86,38 @@
         line-height: 1;
       }
       .parallax__item__img {
-        width: 10vw;
-        height: 10vw;
+        width: 20vw;
+        height: 20vw;
         background-color: #fff;
         background-size: cover;
         background-position: center;
       }
       .parallax__item:nth-child(1) .parallax__item__img {
-        background-image: url("https://source.unsplash.com/random ");
+        background-image: url("https://source.unsplash.com/random");
       }
       .parallax__item:nth-child(2) .parallax__item__img {
-        background-image: url("https://source.unsplash.com/random ");
+        background-image: url("https://source.unsplash.com/random");
       }
       .parallax__item:nth-child(3) .parallax__item__img {
-        background-image: url("https://source.unsplash.com/random ");
+        background-image: url("https://source.unsplash.com/random");
       }
       .parallax__item:nth-child(4) .parallax__item__img {
-        background-image: url("https://source.unsplash.com/random ");
+        background-image: url("https://source.unsplash.com/random");
       }
       .parallax__item:nth-child(5) .parallax__item__img {
-        background-image: url("https://source.unsplash.com/random ");
+        background-image: url("https://source.unsplash.com/random");
       }
       .parallax__item:nth-child(6) .parallax__item__img {
-        background-image: url("https://source.unsplash.com/random ");
+        background-image: url("https://source.unsplash.com/random");
       }
       .parallax__item:nth-child(7) .parallax__item__img {
-        background-image: url("https://source.unsplash.com/random ");
+        background-image: url("https://source.unsplash.com/random");
       }
       .parallax__item:nth-child(8) .parallax__item__img {
-        background-image: url("https://source.unsplash.com/random ");
+        background-image: url("https://source.unsplash.com/random");
       }
       .parallax__item:nth-child(9) .parallax__item__img {
-        background-image: url("https://source.unsplash.com/random ");
+        background-image: url("https://source.unsplash.com/random");
       }
       .parallax__item__img.active {
         filter: hue-rotate(100deg);
@@ -217,6 +217,109 @@
       const box7 = document.querySelector("#section7 .parallax__item__img");
       const box8 = document.querySelector("#section8 .parallax__item__img");
       const box9 = document.querySelector("#section9 .parallax__item__img");
+
+      gsap.to(box1, {
+        duration: 1,
+        x: 500,
+        borderRadius: 100,
+        rotation: 720,
+      });
+
+      gsap.to(box2, {
+        duration: 2,
+        x: 500,
+        rotation: 360,
+        borderRadius: 200,
+        scrollTrigger: {
+          trigger: box2,
+        },
+      });
+
+      gsap.to(box3, {
+        duration: 2,
+        x: 500,
+        rotation: 360,
+        borderRadius: 200,
+        scrollTrigger: {
+          trigger: box3,
+          toggleActions: "play none reverse none",
+        },
+      });
+
+      gsap.to(box4, {
+        duration: 2,
+        x: 500,
+        rotation: 360,
+        borderRadius: 200,
+        scrollTrigger: {
+          trigger: box4,
+          start: "top 50%",
+          end: "bottom 20%",
+          toggleActions: "play none reverse none",
+          markers: false,
+        },
+      });
+
+      gsap.to(box5, {
+        duration: 2,
+        x: 500,
+        rotation: 360,
+        borderRadius: 200,
+        scrollTrigger: {
+          trigger: box5,
+          start: "top 50%",
+          end: "bottom 20%",
+          scrub: true, //1or2 사용가능
+          markers: false,
+        },
+      });
+
+      gsap.to(box6, {
+        duration: 10,
+        x: 500,
+        rotation: 360,
+        borderRadius: 200,
+        scrollTrigger: {
+          trigger: box6,
+          start: "top 50%",
+          end: "top 200px",
+          scrub: true, //1or2 사용가능
+          pin: true,
+          markers: false,
+        },
+      });
+
+      gsap.to(box7, {
+        duration: 10,
+        x: 500,
+        rotation: 360,
+        borderRadius: 200,
+        scrollTrigger: {
+          trigger: box7,
+          start: "top center",
+          end: "bottom 20%",
+          scrub: true, //1or2 사용가능
+          toggleClass: "active",
+          markers: false,
+          id: "box7",
+        },
+      });
+
+      gsap.to(box8, {
+        duration: 10,
+        x: 500,
+        rotation: 360,
+        borderRadius: 200,
+        scrollTrigger: {
+          trigger: box8,
+          start: "top center",
+          end: "bottom 20%",
+          scrub: true, //1or2 사용가능
+          markers: true,
+          id: "box8",
+        },
+      });
     </script>
   </body>
 </html>
+<!-- 출처: https://webstoryboy.co.kr/1909 [WEBSTORYBOY:티스토리 -->
