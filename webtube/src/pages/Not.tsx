@@ -1,7 +1,8 @@
 import React from "react";
+import Main from "../components/section/Main";
 
-const Not = () => {
-  return <div>Not</div>;
+const Today = () => {
+  return <Main>Not</Main>;
 };
 
-export default Not;
+export default Today;

@@ -1,12 +1,20 @@
-import React from "react";
+import React, { ReactNode } from "react";
+import Header from "./Header";
+import { Footer } from "./Footer";
 
-interface MainProps {}
+interface MainProps {
+  children: ReactNode;
+}
 
-const Main: React.FunctionComponent<MainProps> = () => {
+const Main: React.FunctionComponent<MainProps> = (props) => {
   return (
-    <div id="main" role="main">
-      Main
-    </div>
+    <>
+      <Header />
+      <div id="main" role="main">
+        {props.children}
+      </div>
+      <Footer />
+    </>
   );
 };
 
