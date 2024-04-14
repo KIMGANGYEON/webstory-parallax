@@ -2,7 +2,14 @@ import React from "react";
 import { developerText } from "../../data/developer";
 import { Link } from "react-router-dom";
 
-export const Developer = () => {
+interface Developer {
+  img: string;
+  name: string;
+  channelAddress: string;
+  channelId: string;
+}
+
+export const Developer: React.FC<Developer> = () => {
   return (
     <section id="developer">
       <h2>추천 개발자 소개요~</h2>

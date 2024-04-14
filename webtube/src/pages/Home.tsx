@@ -2,11 +2,13 @@ import React from "react";
 import Main from "../components/section/Main";
 import Today from "../components/contents/Today";
 import Developer from "../components/contents/Developer";
-import Webd from "../components/contents/Webd";
-import Website from "../components/contents/Website";
-import Gsap from "../components/contents/Gsap";
-import Protfolio from "../components/contents/Protfolio";
-import Youtube from "../components/contents/Youtube";
+
+import VideoSlider from "../components/video/VideoSlider";
+import { webdText } from "../data/webd";
+import { websiteText } from "../data/website";
+import { gsapText } from "../data/gsap";
+import { portfolioText } from "../data/portfolio";
+import { youtubeText } from "../data/youtube";
 
 const Home = () => {
   return (
@@ -16,11 +18,23 @@ const Home = () => {
     >
       <Today />
       <Developer />
-      <Webd />
-      <Website />
-      <Gsap />
-      <Protfolio />
-      <Youtube />
+      <VideoSlider
+        videos={webdText}
+        title="웹디자인 기능사 준비는 이걸로~"
+        id="web"
+      />
+      <VideoSlider
+        videos={websiteText}
+        title="웹표준 기초 이걸로~"
+        id="website"
+      />
+      <VideoSlider videos={gsapText} title="GSAP 이걸로~" id="website" />
+      <VideoSlider
+        videos={portfolioText}
+        title="포트폴리오 이걸로~"
+        id="website"
+      />
+      <VideoSlider videos={youtubeText} title="YOUTUBE 이걸로~" id="website" />
     </Main>
   );
 };
