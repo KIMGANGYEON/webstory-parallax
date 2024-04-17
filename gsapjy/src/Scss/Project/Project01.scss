@@ -1,0 +1,105 @@
+.Project01 {
+  font-size: 16px;
+  line-height: 1.6;
+  // 폰트
+  .en2 {
+    font-family: "Cormorant Infant", serif;
+  }
+  //lay out
+  .headerBox {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    // margin-bottom: 3000px;
+    .header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      transition: 0.3s;
+      .gnb {
+        ul {
+          display: flex;
+          justify-content: space-between;
+          li {
+            margin-left: 70px;
+            a {
+              .char {
+                display: inline-block;
+                position: relative;
+                color: transparent;
+                overflow: hidden;
+                &::before,
+                &::after {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  opacity: 0.6;
+                  color: white;
+                  content: attr(data-char);
+                  transition: transform 0.35s;
+                  transition-delay: calc(30ms * var(--char-index));
+                }
+                &::before {
+                  transform: translateY(80%);
+                }
+              }
+              &:hover {
+                .char::before {
+                  transform: translateY(0%);
+                  opacity: 1;
+                }
+                .char::after {
+                  transform: translateY(-80%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .active {
+    transform: translateY(-100%);
+  }
+}
+
+.visual {
+  width: 100%;
+  height: 100vh;
+  padding-top: 125px;
+  position: relative;
+  letter-spacing: -1px;
+  .mainText {
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 1.35;
+    margin: 0px 0px 150px 150px;
+    display: inline-block;
+    p {
+      overflow: hidden;
+    }
+  }
+  .subText {
+    margin-left: 20%;
+  }
+  .svgAni {
+    position: absolute;
+    top: 0%;
+    right: -0%;
+    width: 55%;
+  }
+  .scroll {
+    position: fixed;
+    left: 60px;
+    bottom: 40px;
+  }
+}
