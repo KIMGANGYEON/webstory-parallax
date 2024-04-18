@@ -103,3 +103,32 @@
     bottom: 40px;
   }
 }
+
+.motion {
+  .mainText {
+    p {
+      span {
+        .char {
+          color: red;
+          display: inline-block;
+          visibility: hidden;
+          transition: all 1s;
+        }
+        .down {
+          visibility: visible;
+          animation: Down 1s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+@keyframes Down {
+  0% {
+    transform: translateY(110px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

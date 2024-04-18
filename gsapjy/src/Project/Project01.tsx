@@ -3,12 +3,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import splitting from "splitting";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "animate.css";
 
 function Project01() {
   useEffect(() => {
     splitting({ target: ".about" });
     splitting({ target: ".work" });
     splitting({ target: ".contact" });
+    splitting({ target: ".Web" });
+    splitting({ target: ".kim" });
+    splitting({ target: ".port" });
   }, []);
 
   const [prevScrollTop, setPrevScrollTop] = useState(0);
@@ -27,6 +31,20 @@ function Project01() {
     }
     setPrevScrollTop(nowScrollTop);
   }, [nowScrollTop]);
+
+  useEffect(() => {
+    const text = document.querySelectorAll(".mainText p span .char");
+    let i = 0;
+    const start = setInterval(() => {
+      if (i < text.length) {
+        const texts = text[i];
+        texts.classList.add("down");
+        i++;
+      } else {
+        clearInterval(start);
+      }
+    }, 200);
+  });
 
   window.addEventListener("scroll", handelScroll);
 
@@ -62,15 +80,15 @@ function Project01() {
           </div>
         </div>
       </header>
-      <section className="visual en">
+      <section className="visual en motion">
         <div className="mainText">
-          <p>
+          <p className="Web">
             <span>Web Publisher</span>
           </p>
-          <p className="en2">
+          <p className="kim">
             <span>Kim GangYeon</span>
           </p>
-          <p>
+          <p className="kim">
             <span>Portfolio</span>
           </p>
         </div>

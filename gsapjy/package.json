@@ -10,6 +10,8 @@
     "@types/node": "^16.18.96",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
+    "animate.css": "^4.1.1",
+    "animate.css-react": "^1.1.0",
     "gsap": "^3.12.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@types/gsap": "^3.0.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/splitting": "^1.0.6"
   }
