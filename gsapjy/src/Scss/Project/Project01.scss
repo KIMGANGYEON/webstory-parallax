@@ -121,6 +121,15 @@
       }
     }
   }
+  #svgAni01 {
+    fill: blue;
+    stroke-dasharray: 2162;
+    stroke-dashoffset: 2162;
+    animation: ani1 2s liner 1s forwards;
+  }
+  #svgAni02 {
+    fill: red;
+  }
 }
 
 @keyframes Down {
@@ -130,5 +139,14 @@
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes ani1 {
+  0% {
+    stroke-dashoffset: 2162;
+  }
+  100% {
+    stroke-dashoffset: 0;
   }
 }

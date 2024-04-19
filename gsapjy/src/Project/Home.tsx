@@ -23,7 +23,7 @@ function Home() {
           <Link to={"/Project01"}>
             <button>Porject1</button>
           </Link>
-          <Link to={"/Project01"}>
+          <Link to={"/Project02"}>
             <button>Porject2</button>
           </Link>{" "}
           <Link to={"/Project01"}>
