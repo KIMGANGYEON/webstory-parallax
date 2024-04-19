@@ -3,6 +3,7 @@ import Header from "./Header";
 import { Footer } from "./Footer";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Search from "./Search";
+import ScrollTo from "../../utils/scrollTo";
 
 interface MainProps {
   children: ReactNode;
@@ -13,6 +14,7 @@ interface MainProps {
 const Main: React.FunctionComponent<MainProps> = (props) => {
   return (
     <HelmetProvider>
+      <ScrollTo />
       <Helmet
         titleTemplate="%s | Webs Youtube"
         defaultTitle="Webs Youtube"
