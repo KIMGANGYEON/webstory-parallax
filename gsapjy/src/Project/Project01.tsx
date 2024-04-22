@@ -7,6 +7,7 @@ import "animate.css";
 import Svvg from "../JS/svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+gsap.registerPlugin(ScrollTrigger);
 function Project01() {
   useEffect(() => {
     splitting({ target: ".about" });
@@ -53,6 +54,38 @@ function Project01() {
     let svgLength2 = path?.getBoundingClientRect().height;
   });
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".con01",
+        start: "0% 80%",
+        end: "100% 100%",
+        scrub: 1,
+        markers: true,
+      },
+    });
+    tl.to(
+      ".wrap",
+      {
+        backgroundColor: "#999",
+        color: "blue",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    );
+
+    tl.fromTo(
+      ".videoWrap video",
+      {
+        clipPath: "inset(60% 60% 60% 60% round 30%)",
+      },
+      { clipPath: "inset(0% 0% 0% 0% round 0%)", ease: "none", duration: 10 },
+      0
+    );
+  }, []);
+
   window.addEventListener("scroll", handelScroll);
 
   return (
@@ -88,7 +121,7 @@ function Project01() {
           </div>
         </div>
       </header>
-      <section className="visual en motion">
+      <section className="visual en motion wrap">
         <div className="mainText">
           <p className="Web">
             <span>Web Publisher</span>
@@ -118,6 +151,21 @@ function Project01() {
           </svg>
         </div>
         <div className="scroll">Scroll Down</div>
+      </section>
+      <section className="con01">
+        <div className="videoWrap">
+          <video autoPlay muted loop playsInline>
+            <source src="/videos/prada.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="title en">
+          <h2>
+            <span className="en2">Creativeness</span>
+            is all you need
+            <br />
+            for <span className="en">digital design</span>
+          </h2>
+        </div>
       </section>
     </>
   );
