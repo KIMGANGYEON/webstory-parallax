@@ -62,7 +62,7 @@ function Project01() {
         start: "0% 80%",
         end: "100% 100%",
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     });
     tl.to(
@@ -75,6 +75,11 @@ function Project01() {
       },
       0
     );
+    tl.to(".scroll", {
+      autoAlpha: 0,
+      ease: "none",
+      duration: 5,
+    });
 
     tl.fromTo(
       ".videoWrap video",
@@ -82,6 +87,95 @@ function Project01() {
         clipPath: "inset(60% 60% 60% 60% round 30%)",
       },
       { clipPath: "inset(0% 0% 0% 0% round 0%)", ease: "none", duration: 10 },
+      0
+    );
+
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".con02",
+        start: "0% 100%",
+        end: "0% 20%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+    tl2.fromTo(
+      ".con02 .title .a",
+      { x: "-100%" },
+      { x: "0%", ease: "none", duration: 5 },
+      0
+    );
+    tl2.fromTo(
+      ".con02 .title .b",
+      { x: "100%" },
+      { x: "0%", ease: "none", duration: 5 },
+      0
+    );
+
+    const tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".workList",
+        start: "0% 100%",
+        end: "0% 100%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+    tl3.to(
+      ".wrap",
+      {
+        backgroundColor: "#000",
+        color: "#fff",
+        ease: "none",
+        duration: 5,
+      },
+      5
+    );
+
+    tl3.to(
+      ".con02 .title",
+      {
+        position: "fixed",
+        ease: "none",
+        left: "0",
+        top: "100",
+        width: "100%",
+        duration: 5,
+      },
+      5
+    );
+
+    // tl3.fromTo(
+    //   ".workList",
+    //   { margin: "0 auto" },
+    //   {
+    //     margin: "100vh auto 0",
+    //     position: "relative",
+    //     zIndex: "10",
+    //     duration: 1,
+    //   },
+    //   0
+    // );
+
+    const tl4 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".workList",
+        start: "40% 50%",
+        end: "60% 0%",
+        scrub: 1,
+        markers: true,
+      },
+    });
+    tl4.to(
+      ".con02 .title .a",
+
+      { x: "-100%", ease: "none", duration: 5 },
+      0
+    );
+    tl4.to(
+      ".con02 .title .b",
+
+      { x: "100%", ease: "none", duration: 5 },
       0
     );
   }, []);
@@ -166,6 +260,98 @@ function Project01() {
             for <span className="en">digital design</span>
           </h2>
         </div>
+      </section>
+      <section className="con02 wrap">
+        <div className="title en">
+          <p className="a">My</p>
+          <p className="b">Work</p>
+        </div>
+        <ul className="workList">
+          <li>
+            <a href="#">
+              <div className="imgBox">
+                <img src="https://source.unsplash.com/random" alt="" />
+              </div>
+              <div className="textBox">
+                <h3>Site name</h3>
+                <div className="info">
+                  <p>UI/UX Design, Web Publishing</p>
+                  <p>2023</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div className="imgBox">
+                <img src="https://source.unsplash.com/random" alt="" />
+              </div>
+              <div className="textBox">
+                <h3>Site name</h3>
+                <div className="info">
+                  <p>UI/UX Design, Web Publishing</p>
+                  <p>2023</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div className="imgBox">
+                <img src="https://source.unsplash.com/random" alt="" />
+              </div>
+              <div className="textBox">
+                <h3>Site name</h3>
+                <div className="info">
+                  <p>UI/UX Design, Web Publishing</p>
+                  <p>2023</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div className="imgBox">
+                <img src="https://source.unsplash.com/random" alt="" />
+              </div>
+              <div className="textBox">
+                <h3>Site name</h3>
+                <div className="info">
+                  <p>UI/UX Design, Web Publishing</p>
+                  <p>2023</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div className="imgBox">
+                <img src="https://source.unsplash.com/random" alt="" />
+              </div>
+              <div className="textBox">
+                <h3>Site name</h3>
+                <div className="info">
+                  <p>UI/UX Design, Web Publishing</p>
+                  <p>2023</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div className="imgBox">
+                <img src="https://source.unsplash.com/random" alt="" />
+              </div>
+              <div className="textBox">
+                <h3>Site name</h3>
+                <div className="info">
+                  <p>UI/UX Design, Web Publishing</p>
+                  <p>2023</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
       </section>
     </>
   );
