@@ -5,7 +5,7 @@ const Svvg = () => {
     let path = document.getElementById("svgAni01");
     let pathLength = path.getTotalLength();
     console.log(pathLength);
-  });
+  }, []);
   return null;
 };
 

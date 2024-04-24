@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "animate.css";
 import Svvg from "../JS/svg";
+// import Slide from "../JS/slide";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 gsap.registerPlugin(ScrollTrigger);
@@ -161,9 +162,9 @@ function Project01() {
       scrollTrigger: {
         trigger: ".workList",
         start: "40% 50%",
-        end: "60% 0%",
+        end: "70% 0%",
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     });
     tl4.to(
@@ -185,6 +186,7 @@ function Project01() {
   return (
     <>
       <Svvg />
+      {/* <Slide /> */}
       <header className="Project01">
         <div className="headerBox">
           <div className="header">
@@ -352,6 +354,63 @@ function Project01() {
             </a>
           </li>
         </ul>
+      </section>
+      <section className="con03">
+        <div className="textWrap">
+          <div className="title">
+            <p>
+              My <span>Skill</span>
+            </p>
+            <ul>
+              <li>
+                <p>Photoshop</p>
+              </li>
+              <li>
+                <p>Figma</p>
+              </li>
+              <li>
+                <p>html/CSS</p>
+              </li>
+              <li>
+                <p>JavaScript</p>
+              </li>
+              <li>
+                <p>JQuery</p>
+              </li>
+              <li>
+                <p>React</p>
+              </li>
+            </ul>
+            <ul className="list">
+              <li>
+                <img src="https://source.unsplash.com/random" />
+              </li>
+              <li>
+                <img src="https://source.unsplash.com/random" />
+              </li>
+              <li>
+                <img src="https://source.unsplash.com/random" />
+              </li>
+              <li>
+                <img src="https://source.unsplash.com/random" />
+              </li>
+              <li>
+                <img src="https://source.unsplash.com/random" />
+              </li>
+              <li>
+                <img src="https://source.unsplash.com/random" />
+              </li>
+              <li>
+                <img src="https://source.unsplash.com/random" />
+              </li>
+            </ul>
+          </div>
+          <div className="btnWrap">
+            <a href="">
+              <div className="box">→</div>
+            </a>
+          </div>
+        </div>
       </section>
     </>
   );
