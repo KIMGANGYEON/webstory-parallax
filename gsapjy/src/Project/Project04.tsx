@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 function Project04() {
   useEffect(() => {
@@ -13,7 +14,7 @@ function Project04() {
         scrub: 1,
         pin: true,
         // pinSpacing: false,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -37,6 +38,29 @@ function Project04() {
       5
     );
   }, []);
+  const ref = useRef<any>([]);
+  ref.current = [];
+
+  useEffect(() => {
+    ref.current.forEach((el: any) => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "50% 100%",
+          onEnter: () => el.classList.add("active"), // 스크롤 진입 시 클래스 추가
+          onLeaveBack: () => el.classList.remove("active"),
+          scrub: 1,
+          markers: true,
+        },
+      });
+    });
+  }, []);
+
+  const showRef = (el: any) => {
+    if (el && !ref.current.includes(el)) {
+      ref.current.push(el);
+    }
+  };
 
   return (
     <div className="project04">
@@ -48,7 +72,7 @@ function Project04() {
       </section>
       <section className="infoProject">
         <div className="inner">
-          <p className="imgBox">
+          <p className="imgBox" ref={showRef}>
             <img src="https://source.unsplash.com/random" alt="" />
           </p>
           <div className="textBox">
@@ -56,7 +80,7 @@ function Project04() {
             <span className="text">Thailand</span>
             <span className="title">Travel eriod</span>
             <span className="text">5 days 3 nights</span>
-            <span className="title"> cisiting city</span>
+            <span className="title">cisiting city</span>
             <span className="text">asfasfasd</span>
             <span className="title">qrqwerqewr</span>
             <span className="text">asfzxvzxvzxasdf</span>
@@ -74,13 +98,13 @@ function Project04() {
       <section className="concept">
         <div className="inner">
           <ul>
-            <li className="imgBox">
+            <li ref={showRef} className="imgBox">
               <img src="https://source.unsplash.com/random" alt="" />
             </li>
-            <li className="imgBox">
+            <li ref={showRef} className="imgBox">
               <img src="https://source.unsplash.com/random" alt="" />
             </li>
-            <li className="imgBox">
+            <li ref={showRef} className="imgBox">
               <img src="https://source.unsplash.com/random" alt="" />
             </li>
           </ul>
@@ -95,17 +119,17 @@ function Project04() {
           </div>
           <ul className="size">
             <li>
-              <p className="imgBox">
+              <p ref={showRef} className="imgBox">
                 <img src="https://source.unsplash.com/random" alt="" />
               </p>
             </li>
             <li>
-              <p className="imgBox">
+              <p ref={showRef} className="imgBox">
                 <img src="https://source.unsplash.com/random" alt="" />
               </p>
             </li>
             <li>
-              <p className="imgBox">
+              <p ref={showRef} className="imgBox">
                 <img src="https://source.unsplash.com/random" alt="" />
               </p>
             </li>

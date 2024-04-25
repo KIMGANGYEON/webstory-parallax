@@ -90,3 +90,40 @@
 img {
   filter: brightness(50%);
 }
+
+.imgBox {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #b1dd40;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.8s;
+    transition-delay: 0.4s;
+    z-index: 2;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #111606;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.8s;
+    z-index: 3;
+  }
+}
+.active {
+  &::before {
+    height: 0;
+  }
+  &::after {
+    height: 0;
+  }
+}
