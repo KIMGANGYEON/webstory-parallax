@@ -29,6 +29,9 @@ function Home() {
           <Link to={"/Project03"}>
             <button>Porject3</button>
           </Link>
+          <Link to={"/Project04"}>
+            <button>Porject4</button>
+          </Link>
         </div>
       </ButtonBox>
     </>
