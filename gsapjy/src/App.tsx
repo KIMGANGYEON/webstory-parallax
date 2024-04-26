@@ -4,6 +4,7 @@ import Project02 from "./Project/Project02";
 import Home from "./Project/Home";
 import Project03 from "./Project/Project03";
 import Project04 from "./Project/Project04";
+import Project05 from "./Project/Project05";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/project02" element={<Project02 />}></Route>
         <Route path="/project03" element={<Project03 />}></Route>
         <Route path="/project04" element={<Project04 />}></Route>
+        <Route path="/project05" element={<Project05 />}></Route>
       </Routes>
     </Router>
   );

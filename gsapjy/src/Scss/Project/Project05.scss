@@ -1,0 +1,93 @@
+.project05 {
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 100%;
+  background: black;
+  .visual2 {
+    color: white;
+    padding-top: 150px;
+    height: 100%;
+    box-sizing: border-box;
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      .textBox {
+        .title {
+          font-size: 200px;
+        }
+        .subTitle {
+          margin: 30px 0;
+          width: 80%;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .work {
+    height: 100vh;
+    border: 1px solid white;
+    ul {
+      display: flex;
+      padding: 3% 30%;
+      box-sizing: border-box;
+      li {
+        width: 800px;
+        padding: 100px;
+        flex-shrink: 0 !important;
+        a {
+          display: block;
+          width: 100%;
+          position: relative;
+          .imgBox2 {
+            position: relative;
+            img {
+              width: 100%;
+            }
+            &::before {
+              content: "";
+              width: 140px;
+              height: 140px;
+              border-radius: 100%;
+              border: 1px solid white;
+              background: white;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 2;
+              transition: all 0.3s;
+              opacity: 0;
+            }
+            &:hover {
+              img {
+                filter: brightness(80%);
+                transition: all 0.3s;
+              }
+            }
+            &:hover::before {
+              opacity: 1;
+            }
+          }
+          .textBox2 {
+            position: absolute;
+            left: 0;
+            bottom: 10%;
+            // background: red
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            .title {
+              font-size: 60px;
+            }
+            .text {
+              font-size: 20px;
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
